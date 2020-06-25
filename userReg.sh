@@ -84,3 +84,17 @@ function validateUpper()
 }
 read -p "Enter password :" pwd1
 validateUpper $pwd1
+
+function validateNumeric()
+{
+	pattern="^[a-zA-Z@#!]*[0-9]+[a-zA-Z@#!]*$"
+
+	if [[ $pwd2 =~ $pattern  ]]
+	then
+		echo "Valid"
+	else
+		 echo "Error : At least one digit mandatory"
+	fi
+}
+read -p "Enter password : " pwd2
+validateNumeric $pwd2

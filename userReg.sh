@@ -98,3 +98,17 @@ function validateNumeric()
 }
 read -p "Enter password : " pwd2
 validateNumeric $pwd2
+
+
+function validateSpecial() 
+{
+	pattern="^([a-zA-Z0-9]*)[^a-zA-Z_0-9\s]([a-zA-Z0-9]*)$"
+	if [[ $pwd3 =~ $pattern  ]]
+	then
+		echo "Valid"
+	else
+		echo "Error : At least one special character required"
+	fi
+}
+read -p "Enter password : " pwd3
+validateSpecial $pwd3

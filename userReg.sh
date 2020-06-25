@@ -15,3 +15,17 @@ function name()
 }
 read -p " Enter first name : " fname
 name $fname
+
+function lastName()
+{
+
+        pattern="^[[:upper:]]+([a-z]{3,})"
+        if [[ $lname =~ $pattern ]]
+        then
+                echo "Valid"
+        else
+                echo "Invalid"
+        fi
+}
+read -p "Enter last name : " lname
+lastName $lname

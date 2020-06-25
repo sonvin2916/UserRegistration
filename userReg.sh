@@ -68,3 +68,19 @@ function validatePassword()
 }
 read -p "Enter password :" pwd
 validatePassword $pwd
+
+
+function validateUpper()
+{
+	pattern="^([A-Za-z0-9@!#]*)[[:upper:]]+([A-Za-z0-9@!#]*)$"
+
+	if [[ $pwd1 =~ $pattern  ]]
+	then
+		echo "Valid"
+	else
+		echo "Password should have atleast 1 uppercase"
+	fi
+
+}
+read -p "Enter password :" pwd1
+validateUpper $pwd1

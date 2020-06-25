@@ -55,3 +55,16 @@ function validateNo()
 }
 read -p "Enter phone number : " no
 validateNo $no
+
+function validatePassword()
+{
+	pattern="^([A-Za-z0-9@!#$]){8,}$"
+	if [[ $pwd =~ $pattern  ]]
+	then
+		echo "Valid"
+	else
+		echo "Password should cointain minimum 8 characters"
+	fi
+}
+read -p "Enter password :" pwd
+validatePassword $pwd

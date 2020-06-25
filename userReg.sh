@@ -42,3 +42,16 @@ function validateEmail()
 }
 read -p "Enter email :" email
 validateEmail $email
+
+function validateNo()
+{
+	pattern="^[0-9]{2}[[:space:]][0-9]{10}"
+	if [[ $no =~ $pattern  ]]
+	then
+		echo "Valid Phone number"
+	else
+		echo "Invalid Phone number"
+	fi
+}
+read -p "Enter phone number : " no
+validateNo $no

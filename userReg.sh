@@ -29,3 +29,16 @@ function lastName()
 }
 read -p "Enter last name : " lname
 lastName $lname
+
+function validateEmail()
+{
+	pattern="^[a-zA-Z0-9._%+-]+\@[a-zA-Z0-9]+\.[A-Za-z]{2,6}"
+	if [[ $email =~ $pattern  ]]
+	then
+		echo "Valid"
+	else
+		echo "Invalid"
+	fi
+}
+read -p "Enter email :" email
+validateEmail $email
